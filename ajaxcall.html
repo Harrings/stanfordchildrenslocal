@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Read from Excel or Access</title>
+		<script type="text/javascript" src="MyExcel-master/jszip.js"></script>
+		<script type="text/javascript" src="MyExcel-master/FileSaver.js"></script>
+		<script type="text/javascript" src="MyExcel-master/myexcel.js"></script>
+		<script type="text/javascript" src="doctorfile.json"></script>
+        <script language="JavaScript">
+
+		var excel = $JExcel.new("Calibri light 10 #333333");            
+		excel.set( {sheet:0,value:"This is Sheet 0" } );
+		excel.set(0,0,1,"This is line "+1);
+        function getCount()
+        {
+			var doctors=doctorlist;
+			//alert(JSON.stringify(doctors.physicians[0].displayName))
+			excel.generate("SampleData.xlsx");
+		}
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Get count" onclick="getCount()">
+    </body>
+</html>
